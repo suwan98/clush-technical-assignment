@@ -1,21 +1,12 @@
-import {DatePicker} from "antd";
-import Button from "@/components/common/Button";
+import Input from "@/components/common/Input";
+import {useState} from "react";
 
 function App() {
+  const [text, setText] = useState("");
+
   return (
     <>
-      <DatePicker />
-      <Button
-        onClick={() => console.log("Clicked!")}
-        type="primary"
-        size="large">
-        기본 버튼
-      </Button>
-      <Button
-        onClick={() => console.log("User button clicked!")}
-        className="user-button">
-        사용자
-      </Button>
+      <Input value={text} onChange={setText} placeholder="Enter text" />
     </>
   );
 }
