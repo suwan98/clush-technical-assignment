@@ -1,12 +1,9 @@
-import Input from "@/components/common/Input";
-import {useState} from "react";
+import TodoContainer from "./components/todo/TodoContainer";
 
 function App() {
-  const [text, setText] = useState("");
-
   return (
     <>
-      <Input value={text} onChange={setText} placeholder="Enter text" />
+      <TodoContainer />
     </>
   );
 }
