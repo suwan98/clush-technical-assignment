@@ -15,7 +15,7 @@
 **1. 프로젝트 클론**
 
 ```bash
-git clone [레포지토리 주소]
+git clone https://github.com/suwan98/clush-technical-assignment.git
 cd [프로젝트 폴더]
 ```
 
