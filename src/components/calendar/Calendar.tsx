@@ -1,9 +1,12 @@
 import {Calendar as AntCalendar} from "antd";
 import {Dayjs} from "dayjs";
 
-interface CalenderProps {}
+interface CalenderProps {
+  value: Dayjs;
+  onSelectDate: (date: Dayjs) => void;
+}
 
-function Calendar({value, onSelectDate}) {
+function Calendar({value, onSelectDate}: CalenderProps) {
   const onSelect = (value: Dayjs) => {
     onSelectDate(value);
   };
