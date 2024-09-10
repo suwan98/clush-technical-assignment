@@ -1,21 +1,7 @@
-import {Input as AntInput} from "antd";
+import {Input as AntInput, InputProps as AntInputProps} from "antd";
 
-interface InputProps {
-  value: string;
-  onChange: (value: string) => void;
-  placeholder?: string;
-}
-
-function Input({value, onChange, placeholder}: InputProps) {
-  return (
-    <AntInput
-      valut={value}
-      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-        onChange(e.target.value)
-      }
-      placeholder={placeholder}
-    />
-  );
+function Input(props: AntInputProps) {
+  return <AntInput {...props} />;
 }
 
 export default Input;

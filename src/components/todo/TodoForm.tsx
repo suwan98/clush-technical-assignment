@@ -12,16 +12,25 @@ function TodoForm({onAddTodo}: TodoFormProps) {
   const [text, setText] = useState("");
 
   const handleSubmit = () => {
-    if (text.trim() === "") return;
-    onAddTodo(text.trim());
-    setText("");
+    const trimmedText = text.trim();
+    if (trimmedText !== "") {
+      onAddTodo(text.trim());
+      setText("");
+    }
+  };
+
+  const handleEnterPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
   };
 
   return (
     <Space.Compact style={{width: "100%"}}>
       <Input
         value={text}
-        onChange={setText}
+        onChange={(e) => setText(e.target.value)}
+        onKeyPress={handleEnterPress}
         placeholder="새로운 할일을 추가해 주세요."
       />
       <Button type="primary" icon={<PlusOutlined />} onClick={handleSubmit}>
