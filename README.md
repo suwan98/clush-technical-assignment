@@ -46,6 +46,27 @@ pnpm dev
 
 ## 3. 컴포넌트 구조 및 사용 이유
 
+```
+├── 📂src
+│   ├── 📂components
+│   │   ├── 📂common
+│   │   │   ├── Button.tsx
+│   │   │   ├── ClearAllButton.tsx
+│   │   │   └── Input.tsx
+│   │   └── 📂 todo
+│   │   │   ├── TodoContainer.tsx
+│   │   │   ├── TodoForm.tsx
+│   │   │   └── TodoItem.tsx
+│   │   │   └── TodoList.tsx
+│   ├── 📂 hooks
+│   │   └── useTodo.ts
+│   ├── 📂 types
+│   │   └── Todo.ts
+│   └── 📂 utils
+│   └── App.tsx
+│   └── main.tsx
+```
+
 - `App`: 최상위 컴포넌트, 전체 레이아웃 관리
 - `TodoContainer`: Todo 애플리케이션의 주요 컨테이너 컴포넌트
 - `TodoForm`: 새로운 할 일 입력 폼
