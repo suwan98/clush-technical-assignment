@@ -36,7 +36,11 @@ function App() {
 
   return (
     <>
-      <Calendar value={selectedDate} onSelectDate={handleDateSelect} />
+      <Calendar
+        value={selectedDate}
+        onSelectDate={handleDateSelect}
+        events={events}
+      />
       <EventList events={events} selectedDate={selectedDate} />
       <Modal
         title="새로운 일정 추가하기"
