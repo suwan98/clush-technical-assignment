@@ -7,6 +7,7 @@ import {v4 as uuidv4} from "uuid";
 import EventForm from "./components/event/EventForm";
 import {Event} from "./types/Event";
 import {Modal} from "antd";
+import styles from "./App.module.css";
 
 function App() {
   const [selectedDate, setSelectedDate] = useState<Dayjs>(dayjs());
@@ -30,18 +31,26 @@ function App() {
     setIsModalVisible(false);
   };
 
+  const handleDeleteEvent = (id: string) => {
+    setEvents(events.filter((event) => event.id !== id));
+  };
+
   const handleCancel = () => {
     setIsModalVisible(false);
   };
 
   return (
-    <>
+    <div className={styles.appContainer}>
       <Calendar
         value={selectedDate}
         onSelectDate={handleDateSelect}
         events={events}
       />
-      <EventList events={events} selectedDate={selectedDate} />
+      <EventList
+        events={events}
+        selectedDate={selectedDate}
+        onDeleteEvent={handleDeleteEvent}
+      />
       <Modal
         title="새로운 일정 추가하기"
         open={isModalVisible}
@@ -49,7 +58,7 @@ function App() {
         footer={null}>
         <EventForm onSubmit={handleAddEvent} initialDate={selectedDate} />
       </Modal>
-    </>
+    </div>
   );
 }
 

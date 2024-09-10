@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Button, DatePicker, Form, Input, Card} from "antd";
 import {PlusOutlined, CalendarOutlined} from "@ant-design/icons";
 import {Dayjs} from "dayjs";
@@ -11,6 +11,11 @@ interface EventFormProps {
 
 function EventForm({onSubmit, initialDate}: EventFormProps) {
   const [form] = Form.useForm();
+
+  /* 사용자가 클릭한 시점에 따른 날짜 업데이트 */
+  useEffect(() => {
+    form.setFieldsValue({date: initialDate});
+  }, [initialDate, form]);
 
   const handleSubmit = (values: {title: string; date: Dayjs}) => {
     onSubmit(values);

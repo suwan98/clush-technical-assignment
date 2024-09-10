@@ -2,6 +2,7 @@ import {Calendar as AntCalendar, Badge} from "antd";
 import {Dayjs} from "dayjs";
 import {Event} from "../../types/Event";
 import styles from "./Calendar.module.css";
+import locale from "antd/es/date-picker/locale/ko_KR";
 
 interface CalenderProps {
   value: Dayjs;
@@ -28,7 +29,12 @@ function Calendar({value, onSelectDate, events = []}: CalenderProps) {
   };
 
   return (
-    <AntCalendar value={value} onSelect={onSelect} cellRender={cellRender} />
+    <AntCalendar
+      value={value}
+      onSelect={onSelect}
+      cellRender={cellRender}
+      locale={locale}
+    />
   );
 }
 
