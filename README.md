@@ -2,6 +2,8 @@
 
 <br />
 
+![Calender Application ReadMe Gif](https://github.com/user-attachments/assets/693947fc-602f-4ef6-82c9-0482622fe893)
+
 ## 1. 프로젝트 설명
 
 - React와 TypeScript를 통해 개발된 캘린더 애플리케이션
