@@ -1,5 +1,7 @@
 # 클러쉬 프론트엔드 개발자 1차 과제 Todo Application
 
+![Todo Application ReadMe Gif](https://github.com/user-attachments/assets/790dea16-877a-4e29-828c-21c05f2287aa)
+
 <br />
 
 ## 1. 프로젝트 설명
@@ -41,7 +43,7 @@ pnpm install
 pnpm dev
 ```
 
-3. 브라우저에서 http://localhost:5173 접속
+3. 브라우저에서 http://localhost 접속
 
 <br />
 <br />
