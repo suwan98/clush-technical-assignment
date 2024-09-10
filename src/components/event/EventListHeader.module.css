@@ -1,0 +1,17 @@
+.eventListHeaderContainer {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.date {
+  flex-grow: 1;
+}
+
+.eventCount {
+  font-size: 14px;
+  color: #fff;
+  margin-top: 12px;
+}

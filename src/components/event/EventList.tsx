@@ -21,7 +21,10 @@ function EventList({events, selectedDate, onDeleteEvent}: EventListProps) {
       className={styles.eventList}
       header={
         <div className={styles.eventListHeader}>
-          <EventListHeader selectedDate={selectedDate} />
+          <EventListHeader
+            selectedDate={selectedDate}
+            eventCount={filteredEvents.length}
+          />
         </div>
       }
       bordered
