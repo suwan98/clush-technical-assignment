@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import {Button as AntButton, ButtonProps as AntButtonProps} from "antd";
 
 interface ButtonProps extends Omit<AntButtonProps, "type"> {
@@ -17,13 +16,11 @@ function Button({
   loading = false,
   ...rest
 }: ButtonProps) {
-  const buttonClasses = classNames("custom-button", className);
-
   return (
     <AntButton
       onClick={onClick}
       disabled={disabled}
-      className={buttonClasses}
+      className={className}
       type={type}
       size={size}
       icon={icon}
