@@ -1,8 +1,6 @@
-# 주식회사 클러시 FrontendEnd 과제
+# 클러시 FrontendEnd 개발 과제
 
-<br />
-
-## 브런치 구조
+## 브랜치 구조
 
 - `main` : 메인 브랜치
 - `feature/todo-app` : Todo 애플리케이션 개발을 위한 브랜치
@@ -21,18 +19,22 @@ cd [프로젝트 폴더]
 
 <br />
 
-**2. 브랜치 목록 확인**
+**2.브랜치 목록 확인**
 
 ```bash
 git branch -a
 ```
 
-**3. 특정 브랜치로 전환 및 접근**
+**3.브랜치 전환 및 접근**
 
-- Todo 애플리케이션
+**Todo 애플리케이션**
 
-`git checkout feature/todo-app`
+```bash
+git checkout feature/todo-app
+```
 
-- Calendar 애플리케이션
+**Calendar 애플리케이션**
 
-`git checkout feature/calendar-app`
+```bash
+git checkout feature/calendar-app
+```
