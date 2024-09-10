@@ -1,7 +1,7 @@
 import {useState, useCallback} from "react";
 import {Todo} from "./../types/Todo";
 import {v4 as uuid} from "uuid";
-import {message} from "antd";
+import {message, Modal} from "antd";
 
 const useTodo = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -61,6 +61,20 @@ const useTodo = () => {
     }
   }, [todos, filter]);
 
+  /* 할일 전체 삭제 함수 */
+  const clearAllTodos = useCallback(() => {
+    Modal.confirm({
+      title: "모든 할 일을 삭제하시겠습니까?",
+      content: "이 작업은 되돌릴 수 없습니다.",
+      okText: "예",
+      cancelText: "아니오",
+      onOk: () => {
+        setTodos([]);
+        message.success("모든 할 일이 삭제되었습니다.");
+      },
+    });
+  }, []);
+
   return {
     todos: filteredTodos(),
     setTodos,
@@ -69,6 +83,7 @@ const useTodo = () => {
     toggleTodo,
     filter,
     setFilter,
+    clearAllTodos,
   };
 };
 

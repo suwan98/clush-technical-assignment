@@ -4,7 +4,15 @@ import {UnorderedListOutlined, CheckSquareOutlined} from "@ant-design/icons";
 import useTodo from "./hooks/useTodo";
 
 function App() {
-  const {todos, addTodo, toggleTodo, deleteTodo, filter, setFilter} = useTodo();
+  const {
+    filter,
+    setFilter,
+    todos,
+    addTodo,
+    toggleTodo,
+    deleteTodo,
+    clearAllTodos,
+  } = useTodo();
 
   const handleMenuClick = (key: string) => {
     setFilter(key as "all" | "completed");
@@ -34,6 +42,7 @@ function App() {
               onAddTodo={addTodo}
               onToggleTodo={toggleTodo}
               onDeleteTodo={deleteTodo}
+              onClearAllTodos={clearAllTodos}
             />
           </div>
         </Layout.Content>

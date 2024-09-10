@@ -3,16 +3,19 @@ import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
 import {Card, Divider, Space} from "antd";
 import {Typography} from "antd";
+import ClearAllButton from "../common/ClearAllButton";
 
 interface TodoContainerProps {
   todos: Todo[];
   onAddTodo: (text: string) => void;
   onToggleTodo: (id: string) => void;
   onDeleteTodo: (id: string) => void;
+  onClearAllTodos: () => void;
 }
 
 function TodoContainer({
   todos,
+  onClearAllTodos,
   onAddTodo,
   onToggleTodo,
   onDeleteTodo,
@@ -21,6 +24,7 @@ function TodoContainer({
     <Card>
       <Space direction="vertical" style={{width: "100%"}}>
         <Typography.Title level={2}>할일 목록 📑</Typography.Title>
+        <ClearAllButton onClearAll={onClearAllTodos} />
         <TodoForm onAddTodo={onAddTodo} />
         <Divider />
         <TodoList

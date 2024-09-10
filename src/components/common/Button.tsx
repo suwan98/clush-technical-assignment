@@ -1,15 +1,9 @@
-import classNames from "classNames";
-import {Button as AntButton} from "antd";
+import classNames from "classnames";
+import {Button as AntButton, ButtonProps as AntButtonProps} from "antd";
 
-interface ButtonProps {
+interface ButtonProps extends Omit<AntButtonProps, "type"> {
   children: React.ReactNode;
-  onClick?: () => void;
-  disabled?: boolean;
-  className?: string;
   type?: "primary" | "default" | "dashed" | "link" | "text";
-  size?: "large" | "middle" | "small";
-  icon?: React.ReactNode;
-  loading?: boolean;
 }
 
 function Button({
@@ -21,22 +15,22 @@ function Button({
   size = "middle",
   icon,
   loading = false,
+  ...rest
 }: ButtonProps) {
   const buttonClasses = classNames("custom-button", className);
 
   return (
-    <>
-      <AntButton
-        onClick={onClick}
-        disabled={disabled}
-        className={buttonClasses}
-        type={type}
-        size={size}
-        icon={icon}
-        loading={loading}>
-        {children}
-      </AntButton>
-    </>
+    <AntButton
+      onClick={onClick}
+      disabled={disabled}
+      className={buttonClasses}
+      type={type}
+      size={size}
+      icon={icon}
+      loading={loading}
+      {...rest}>
+      {children}
+    </AntButton>
   );
 }
 
