@@ -33,7 +33,7 @@ pnpm install
 pnpm dev
 ```
 
-3. 브라우저에서 http://localhost:5173 접속
+3. 브라우저에서 http://localhost:5174 접속
 
 <br />
 <br />
